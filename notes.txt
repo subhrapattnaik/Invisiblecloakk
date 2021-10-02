@@ -1,0 +1,18 @@
+OpenCV uses H: 0-179, S: 0-255, V: 0-255
+
+
+he x-axis represents Hue in [0,180), the y-axis1 represents Saturation in [0,255], the y-axis2 represents S = 255, while keep V = 255.
+
+To find a color, usually just look up for the range of H and S, and set v in range(20, 255).
+
+To find the orange color, we look up for the map, and find the best range: H :[10, 25], S: [100, 255], and V: [20, 255]. So the mask is cv2.inRange(hsv,(10, 100, 20), (25, 255, 255) )
+
+Then we use the found range to look for the orange color, this is the result:
+
+import cv2
+
+img = cv2.imread("test.jpg")
+hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+mask = cv2.inRange(hsv,(10, 100, 20), (25, 255, 255) )
+cv2.imshow("orange", mask);cv2.waitKey();cv2.destroyAllWindows()
+----------------------------------------------------------
