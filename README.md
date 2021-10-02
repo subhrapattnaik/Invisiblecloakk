@@ -40,14 +40,14 @@ Steps Explanation of Code:
 Step 1 – Import necessary packages and Initialize the camera:
 Using import, we imported the required libraries
 To access the camera, we use the method cv2.VideoCapture(0) and set the capture object as cap.
-
+-------------------------------------------------
 Step 2 – Store a single frame before starting the infinite loop:
 cap.read() function captures frames from webcam
 2-second delay between two captures are for adjusting camera auto exposure
 cap.isOpen() function checks if the camera is open or not and returns true if the camera is open and false if the camera is not open.
 While capturing the background make sure that you or your clothes don’t accidentally come into the frame.
 
-
+----------------------------------------------
 Step 3 – Detect the cloth:
 In this invisible cloak opencv project, we are using green cloth so we have to detect green color. So how can we do this?
 
@@ -66,7 +66,7 @@ Lower bound and Upper bound are the boundaries of green color.
 cv2.inRange() function returns a segmented binary mask of the frame where the green color is present.
 
 Here we can see in the frame wherever the green color is detected the mask shows that as white. The rest of the region is black.
-
+-------------------------------------------
 Step 4 – Apply the mask:
 We have successfully detected the cloak. We want to show our previously-stored background in the main frame where the cloak is present. First, we need to take the only white region from the background.
 
@@ -78,7 +78,7 @@ cv2.bitwise_not() inverse the mask pixel value. Where the mask is white it retur
 
 
 Here we have the inverse mask at the left and the corresponding region from the current frame at the right.
-
+---------------------------------------
 Step 5 – Combine masked frames together:
 Finally, we have a cloak background and current frame background. Now it’s time to combine those to get a whole frame.
 
@@ -89,7 +89,7 @@ Yeah, finally we are reaching our goal. But can you see the green edges of the c
 So what can we do here?
 
 We’re gonna use some filtering methods provided by OpenCV. OpenCV provides morphological operation libraries.
-
+-----------------------------------
 Step 6 – Removing unnecessary noise from mask :
 
 Explanation:
