@@ -19,3 +19,19 @@ cv2.imshow("orange", mask);cv2.waitKey();cv2.destroyAllWindows()
 from where can I find the "hsv space" (lower and upper) for all colors?
 
 maybe use a "color picker" prog, like this: (it will print out the pixel value, lower and upper bound for each mouseclick)
+------------------------------------
+Open up your terminal or command line and cd into the directory with the converter.py file and run the following :
+
+1
+python3 converter.py 36 28 237
+Note that the order is in BGR, not RGB. After you run the script, it should output that the lower range = [169, 100, 100] and the upper range = [189, 255, 255].
+
+We will now use NumPy to create arrays to hold our lower and upper range.
+
+1
+2
+lower_range = np.array([169, 100, 100], dtype=np.uint8)
+upper_range = np.array([189, 255, 255], dtype=np.uint8)
+The “dtype = np.uint8” simply means that it will have the data type an 8 bit integer, which makes sense, because the max possible value for the hue, saturation, and value is 2^8 – 1.
+
+Finally, with the lower range and the upper range found, we can create a mask for our image.
