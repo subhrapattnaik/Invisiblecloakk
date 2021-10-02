@@ -107,4 +107,9 @@ Adjust kernel size according to your condition.
 cv2.MORPH_CLOSE removes unnecessary black noise from the white region in the mask. And how much noise to remove that is defined by kernel size.
 cv2.MORPH_OPEN removes unnecessary white noise from the black region.
 cv2.dilate increases white region in the image.
+---------------------
 
+https://henrydangprg.com/2016/06/26/color-detection-in-python-with-opencv/
+
+
+The last three lines just state that the program will wait until the user presses the “esc” key (which has an id of 27) before it quits and destroys every OpenCV window.
