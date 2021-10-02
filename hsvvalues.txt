@@ -10,3 +10,16 @@ color_dict_HSV = {'black': [[180, 255, 30], [0, 0, 0]],
               'purple': [[158, 255, 255], [129, 50, 70]],
               'orange': [[24, 255, 255], [10, 50, 70]],
               'gray': [[180, 18, 230], [0, 0, 40]]}
+              
+              
+              
+              
+              This one belongs to red:
+
+lower_red = np.array([160,20,70])
+upper_red = np.array([190,255,255])
+and this one belongs to blue:
+
+lower_blue = np.array([101,50,38])
+upper_blue = np.array([110,255,255])
+
